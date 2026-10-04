@@ -9,14 +9,24 @@ import Todo from './components/Todo.jsx'
 
 function App() {
   const [todos, setTodos] = useState([])
+  const [status, setStatus] = useState("todas")
+  const filteredTodos = todos.filter((todo) => 
+    status === "completadas" 
+    ? todo.completed 
+    : status === "incompletas" 
+    ? !todo.completed 
+    : true
+  )
   return (
     <div>
       <h1>Todo_List</h1>
-      <Form setTodos={setTodos}/>
-      <TodoList
-      todos={todos} 
+      <Form setTodos={setTodos}
+      setStatus={setStatus}
+      />
+      <TodoList todos={filteredTodos} 
       setTodos={setTodos}/>
     </div>
+  
   )
 }
 
