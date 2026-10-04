@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Form({setTodos}) {
+function Form({ setTodos, setStatus }) {
     const [inputText, setInputText] = useState("")
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -26,6 +26,11 @@ function Form({setTodos}) {
             onChange={(e) => setInputText(e.target.value)}
             />
             <button type="submit">Agregar</button>
+            <select onChange={(e) => setStatus(e.target.value)}>
+                <option value="todas">Todas</option>
+                <option value="completadas">Completadas</option>
+                <option value="incompletas">Incompletas</option>
+            </select>
         </form>
     )
 }
