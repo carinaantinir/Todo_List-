@@ -28,7 +28,7 @@ function Form({ setTodos, setStatus }) {
             <button type="submit">Agregar</button>
             <select onChange={(e) => setStatus(e.target.value)}>
                 <option value="todas">Todas</option>
-                <option value="completadas">Completadas</option>
+                <option value="completadas">Completas</option>
                 <option value="incompletas">Incompletas</option>
             </select>
         </form>
