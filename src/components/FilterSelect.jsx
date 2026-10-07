@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import {ChevronDown} from "lucide-react";
 
 function FilterSelect({ setStatus, buttonStyles }) {
     const [open, setOpen] = useState(false);
@@ -22,9 +23,12 @@ function FilterSelect({ setStatus, buttonStyles }) {
             <button
                 type="button"
                 onClick={() => setOpen(!open)}
-                className="px-5 py-3 bg-pink-300 text-pink-600 font-semibold rounded-full shadow-lg shadow-pink-300/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition cursor-pointer"
+                className={buttonStyles}
             >
+            <span className="inline-flexitem-center justify-center gap-2">
                 {selected} 
+                <ChevronDown size={18} />
+            </span>    
             </button>
 
             {open && (
