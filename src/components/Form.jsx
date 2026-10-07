@@ -3,7 +3,7 @@ import FilterSelect from './FilterSelect.jsx'
 
 function Form({ setTodos, setStatus }) {
     const [inputText, setInputText] = useState("")
-    const buttonStyles = "px-5 py-3 bg-pink-400 text-white font-semibold rounded-xl hover:bg-pink-500 active:sca transition cursor-pointer hover:scale-105 active:scale-95 appearance-none outline-none border-0" 
+    const buttonStyles = "px-5 py-3 bg-pink-300 text-pink-600 font-semibold rounded-xl hover:bg-pink-500 active:sca transition cursor-pointer hover:scale-105 active:scale-95 appearance-none outline-none border-0" 
     const handleSubmit = (e) => {
         e.preventDefault()
         if (inputText.trim() === "") return;
@@ -34,7 +34,9 @@ function Form({ setTodos, setStatus }) {
             >
                 Agregar
             </button>
-            <FilterSelect setStatus={setStatus}/>
+            <FilterSelect setStatus={setStatus}
+            buttonStyles={buttonStyles}
+            />
         </form>
     )
 }

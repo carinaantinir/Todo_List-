@@ -7,6 +7,9 @@ import Intro from "./components/Intro.jsx";
 import Form from "./components/Form.jsx";
 import TodoList from "./components/TodoList.jsx";
 
+
+
+
 import conejoBinario from "./assets/conejo-binario.mp4";
 
 function App() {
@@ -40,7 +43,8 @@ function App() {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-pink-50 to-pink-200">
-      <div className="relative overflow-hidden w-full max-w-xl bg-white/70 backdrop-blur-md rounded-3xl shadow-xl">
+      <BinaryRain variant="fondo"/>
+      <div className="relative overflow-hidden w-full max-w-xl bg-white/70 backdrop-blur-md rounded-3xl shadow-2xl">
         {stage === "intro" && (
           <Intro onFollow={handleFollow} />
         )}
@@ -62,7 +66,8 @@ function App() {
           <BinaryRain variant="medio" />
           <BinaryRain variant="frente" />
 
-          <h1 className="text-pink-400 text-4xl font-light tracking-wide mb-6 text-center">
+         
+          <h1 className="text-pink-600 text-4xl font-light tracking-wide mb-6 text-center">
           Todo List
           </h1>
 

@@ -9,6 +9,13 @@ function BinaryRain({ variant = "medio" }) {
         opacity: 0.22,
         speed: 13,
     },
+        exterior: {
+        step: 11,
+        offset: 1,
+        fontSize: 7,
+        opacity: 0.35,
+        speed: 13,
+},
     medio: {
         offset: 3,
         step: 17,

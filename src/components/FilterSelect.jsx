@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 
-function FilterSelect({ setStatus }) {
+function FilterSelect({ setStatus, buttonStyles }) {
     const [open, setOpen] = useState(false);
     const [selected, setSelected] = useState("Todas");
 
@@ -22,7 +22,7 @@ function FilterSelect({ setStatus }) {
             <button
                 type="button"
                 onClick={() => setOpen(!open)}
-                className="px-5 py-3 bg-pink-400 text-white font-semibold rounded-full shadow-lg shadow-pink-300/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition cursor-pointer"
+                className="px-5 py-3 bg-pink-300 text-pink-600 font-semibold rounded-full shadow-lg shadow-pink-300/30 hover:bg-pink-500 hover:scale-105 active:scale-95 transition cursor-pointer"
             >
                 {selected} 
             </button>
