@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import FilterSelect from './FilterSelect.jsx'
 
 function Form({ setTodos, setStatus }) {
     const [inputText, setInputText] = useState("")
+    const buttonStyles = "px-5 py-3 bg-pink-400 text-white font-semibold rounded-xl hover:bg-pink-500 active:sca transition cursor-pointer hover:scale-105 active:scale-95 appearance-none outline-none border-0" 
     const handleSubmit = (e) => {
         e.preventDefault()
         if (inputText.trim() === "") return;
@@ -18,19 +20,21 @@ function Form({ setTodos, setStatus }) {
     }    
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 mb-6">
             <input 
             type="text"
+            className="flex-1 px4 py-3 rounded-full border border-0 shadow-lg shadow-pink-300/30 bg-whithe/80 outline-none focus:ring-2 focus:ring-pink-300 inset-shadow-sm inset-shadow-pink-700/50 text-center text-pink-700 placeholder:text-pink-400"
             placeholder="Agregar Tarea"
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             />
-            <button type="submit">Agregar</button>
-            <select onChange={(e) => setStatus(e.target.value)}>
-                <option value="todas">Todas</option>
-                <option value="completadas">Completas</option>
-                <option value="incompletas">Incompletas</option>
-            </select>
+            <button 
+                type="submit"
+                className={buttonStyles}
+            >
+                Agregar
+            </button>
+            <FilterSelect setStatus={setStatus}/>
         </form>
     )
 }

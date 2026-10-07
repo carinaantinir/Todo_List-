@@ -5,7 +5,9 @@ import Todo from "./Todo"
 function TodoList({ todos, setTodos }) {
     return (
         <div>
-            <p>Lista de tareas</p>
+            <p className="text-center text-pink-400 text-xl font-medium mb-6">
+                Lista de tareas
+            </p>
 
             {todos.map ((todo ) => (
                 <Todo
