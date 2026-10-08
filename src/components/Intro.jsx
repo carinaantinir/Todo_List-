@@ -21,7 +21,7 @@ function Intro({ onFollow }) {
         onClick={onFollow}
         className="px-8 py-3 rounded-full text-pink-500 border border-pink-300 hover:bg-pink-100 transition cursor-pointer"
         >
-        Inicio
+        Seguir
         </button>
     </div>
 );

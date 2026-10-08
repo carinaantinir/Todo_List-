@@ -1,5 +1,7 @@
 
 import { Check, Trash2 } from 'lucide-react'
+import Button from "./Button.jsx";
+
 
 function Todo ({ text, todo, setTodos }) {
     const deleteHandler = () => {
@@ -8,7 +10,7 @@ function Todo ({ text, todo, setTodos }) {
         )
     }
 
-    const completeHander = () => {
+    const completeHandler = () => {
         setTodos((prevTodos) =>
             prevTodos.map((item) => 
             item.id === todo.id
@@ -17,10 +19,6 @@ function Todo ({ text, todo, setTodos }) {
             )
         )
     }
-
-    const actionButtonStyles =
-        "w-10 h-10 rounded-full bg-pink-300 text-pink-600 shadow-md shadow-pink-300/40 hover:bg-pink-400 hover:scale-105 active:scale-95 transition cursor-pointer";
-
     return (
         <div
             className={`flex items-center justify-between gap-3 px-4 mb-3 rounded-xl transition-all duration-300 ${
@@ -28,7 +26,7 @@ function Todo ({ text, todo, setTodos }) {
                     ? "shadow-sm opacity-100"
                     : "shadow-xl shadow-pink-700/60 bg-white/80 border border-pink-100 -translate-y-1"
         }`}
-        >
+            >
             <p
                 className="flex-1 text-pink-600 font-medium"
                 style={{ textDecoration: todo.completed ? "line-through" : "none"
@@ -38,23 +36,16 @@ function Todo ({ text, todo, setTodos }) {
                 {text}
             </p>
             <div className="flex items-center gap-2">
-            <button 
-                onClick={completeHander}
-                className={actionButtonStyles}
-            
-            >  
-                <Check size={30} /> 
-            </button>
+                <Button onClick={completeHandler} variant="icono">
+                    <Check size={30} />
+                </Button>
 
-            <button 
-            onClick={deleteHandler}
-            className={actionButtonStyles}
-            >
-                <Trash2 size={30} />  
-            </button>
+                <Button onClick={deleteHandler} variant="icono">
+                    <Trash2 size={30} />
+                </Button>
             </div>
         </div>
-    )
+)
 }
 
 export default Todo
